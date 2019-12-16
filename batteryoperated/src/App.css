@@ -1,0 +1,27 @@
+.links {
+  margin: 10px;
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+.center {
+  margin: auto;
+  width: 50%;
+}
+.right{
+  float: right;
+}
+.profilepic {
+  width: 300px;
+  height: 300px;
+}
+
+.form{
+  background-color: black;
+  display: inline-block;
+}
+
+.input{
+  color: white
+}
