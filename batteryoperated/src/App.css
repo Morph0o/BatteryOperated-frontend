@@ -15,10 +15,18 @@
 .profilepic {
   width: 300px;
   height: 300px;
+  padding: 10px;
+}
+.pic{
+  width:150px;
+  height:150px;
 }
 
 .form{
   background-color: black;
+  display: inline-block;
+}
+.part{
   display: inline-block;
 }
 

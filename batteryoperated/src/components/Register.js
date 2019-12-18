@@ -59,22 +59,22 @@ registersubmit=(e)=>{
                 <br/>
                       <Form onSubmit={this.registersubmit}>
     <Form.Field >
-      <label>Username:</label>
+      <label className="links">Username:</label>
       <input placeholder='Username' onChange={this.username} value={this.state.username}/>
     </Form.Field>
     <br/>
     <Form.Field>
-      <label>Password:</label>
+      <label className="links">Password:</label>
       <input placeholder='Password' onChange={this.password} value={this.state.password}/>
     </Form.Field>
     <br/>
     <Form.Field>
-      <label>Desc:</label>
+      <label className="links">Desc:</label>
       <textarea placeholder='Desc' onChange={this.desc} value={this.state.desc}/>
     </Form.Field>
     <br/>
     <Form.Field>
-      <label>Profile Pic:</label>
+      <label className="links">Profile Pic:</label>
       <input placeholder='Profile Pic' onChange={this.profilepic} value={this.state.profilepic}/>
     </Form.Field>
     <br/>

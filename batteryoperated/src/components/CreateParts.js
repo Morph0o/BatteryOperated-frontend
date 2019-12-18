@@ -69,6 +69,7 @@ class CreateParts extends React.Component{
     <Button className="center" type='submit'>Submit</Button>
   </Form>
   </div>
+  <p>Add a IMAGE url address of a pic already on the web.</p>
   <img alt="part pic" src={this.state.partimage}/>
             </div>
         )

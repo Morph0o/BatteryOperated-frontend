@@ -48,8 +48,8 @@ class Login extends React.Component{
     
 
             <div className="center form">
-                <br/>
-                <br/>
+               
+                <h2 className="links">LOGIN</h2>
                 <Form onSubmit={this.loginsubmit}>
     <Form.Field >
       <label className="input">Username:</label>

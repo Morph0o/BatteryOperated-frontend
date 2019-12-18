@@ -13,11 +13,15 @@ class Home extends React.Component{
             <h3>What you can do.</h3>
             <ul>
                 <li>Add projects</li>
+                <li>Create parts</li>
                 <li>Add parts to projects</li>
-                <li>Add pictures to projects</li>
             </ul>
             </div>
-
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <p>Created Dec 2019 BY:Mickey Partlow email:Detrodoniv@yahoo.com</p>
             </div>
         )
     }
