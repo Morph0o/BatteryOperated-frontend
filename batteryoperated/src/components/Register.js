@@ -52,14 +52,14 @@ registersubmit=(e)=>{
 }
     render(){
         return(<div>
-            <div className="center">
+            <div className="center pad">
                 <br/>
                 <br/>
                 <br/>
                 <br/>
                       <Form onSubmit={this.registersubmit}>
     <Form.Field >
-      <label className="links">Username:</label>
+      <label className="white" >Username:</label>
       <input placeholder='Username' onChange={this.username} value={this.state.username}/>
     </Form.Field>
     <br/>
@@ -80,6 +80,7 @@ registersubmit=(e)=>{
     <br/>
     <Button className="center" type='submit'>Submit</Button>
   </Form>
+  <h3>USE A IMAGE URL FROM A PIC ALREADY ON WEB</h3>
   <img className="profilepic" alt="profile pic" src={this.state.profilepic}/>
             </div>
             

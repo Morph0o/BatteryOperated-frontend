@@ -44,12 +44,12 @@ class CreateParts extends React.Component{
 
     render(){
         return(
-            <div>
+            <div >
                 <br/>
                 <br/>
                 <br/>
                 <br/>
-                <div className="form">
+                <div className="form padding">
                 <Form onSubmit={this.partsubmit}>
     <Form.Field >
       <label className="input">PartName:   </label>

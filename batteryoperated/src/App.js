@@ -11,6 +11,7 @@ import CreateProject from './components/CreateProject'
 import ProjectPage from './containers/ProjectPage'
 import Project from './components/Project'
 import AddPart from './components/AddPart'
+import AddPicture from './components/AddPicture'
 
 class App extends React.Component{
   constructor(){
@@ -24,7 +25,7 @@ class App extends React.Component{
   }
   componentDidMount(){
     if(localStorage.getItem("jwt")){
-      fetch('http://localhost:3000/profile', {
+      fetch('https://batteryoperated-backend.herokuapp.com/profile', {
         headers: {
           "Authorization" : localStorage.getItem('jwt')
         }
@@ -34,7 +35,7 @@ class App extends React.Component{
         this.updateUser(user)
       })
     }
-    fetch('http://localhost:3000/projects')
+    fetch('https://batteryoperated-backend.herokuapp.com/projects')
     .then(resp => resp.json())
     .then(projects => this.setState({
       projects: projects
@@ -48,12 +49,12 @@ class App extends React.Component{
     this.setState({
       currentUser: ""
     })
-    
-  
+    alert("LOGGED OUT")
   }
   search = (event) => {
+   
     this.setState({
-      search: event.target.value
+      search: event.target.value.toLowerCase()
     })
   }
   project=(project)=>{
@@ -62,6 +63,14 @@ class App extends React.Component{
     },()=>{console.log(this.state.project)})
     return this.state.project
   }
+  refreshDelete = (id) => {
+let proj = this.state.projects.filter(project => project.id != id)
+    console.log(proj)
+    this.setState({
+      projects: proj
+    })
+  }
+  
   render(){
   return (
     <div >
@@ -73,6 +82,7 @@ class App extends React.Component{
       <a className="links" href="/profile">Profile</a>
       <a  className="links" href="/links">Links</a>
       <button className="links" onClick={this.logout}>LogOut</button>
+     
     </div>
        <Switch>
         
@@ -88,13 +98,16 @@ class App extends React.Component{
           }} />
     <Route exact path="/links" component={Links}/>
     <Route exact path="/register" component={Register}/>
-    <Route exact path="/createproject" render={()=>{return <CreateProject user={this.state.currentUser}/>}}/>
-    <Route exact path="/projects/:id" render={(props)=>{return <Project {...props} user={this.state.currentUser}project={this.state.project} renderproject={this.project}/>}}/>
-    <Route exact path="/projects"  render={()=>{return <ProjectPage projects={this.state.search === "" ? this.state.projects: this.state.projects.filter(project => project.name.includes(this.state.search))} searchhis={this.state.search} searchmed={this.search}/>} }/>
+    <Route exact path="/createproject" render={(props)=>{return <CreateProject {...props}user={this.state.currentUser} />}}/>
+    <Route exact path="/projects/:id" render={(props)=>{return <Project {...props} refresh={this.refreshDelete} user={this.state.currentUser}project={this.state.project} renderproject={this.project}/>}}/>
+    <Route exact path="/projects"  render={()=>{return <ProjectPage projects={this.state.search === "" ? this.state.projects: this.state.projects.filter(project => project.name.toLowerCase().includes(this.state.search))} searchhis={this.state.search} searchmed={this.search}/>} }/>
     <Route exact path="/addparts" render={(props)=>{
-      console.log(props)
      let projId= props.location.state.project
-      return <AddPart projId={projId}/>}}/>    
+      return <AddPart projId={projId}/>}}/> 
+      <Route exact path="/addpicture"render={(props)=>{
+        let projectId = props.location.state.project
+        return <AddPicture projId={projectId}/>}}/>
+      }}   
     
   </Switch>
     </div>

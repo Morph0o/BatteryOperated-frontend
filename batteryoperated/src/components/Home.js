@@ -21,7 +21,7 @@ class Home extends React.Component{
             <br/>
             <br/>
             <br/>
-            <p>Created Dec 2019 BY:Mickey Partlow email:Detrodoniv@yahoo.com</p>
+            <p className="center">Created Dec 2019 BY:Mickey Partlow email:Detrodoniv@yahoo.com</p>
             </div>
         )
     }

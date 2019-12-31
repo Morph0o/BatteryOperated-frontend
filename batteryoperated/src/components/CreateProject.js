@@ -1,5 +1,6 @@
 import React from 'react'
-import {Form,Button } from 'semantic-ui-react' 
+import {Form } from 'semantic-ui-react' 
+import {Link} from 'react-router-dom';
 
 class CreateProject extends React.Component{
 constructor(){
@@ -26,8 +27,8 @@ image= (event) => {
     })
 }
 projsubmit = (event)=> {
-    event.preventDefault()
-        fetch('http://localhost:3000/projects', {
+    // event.preventDefault()
+        fetch('https://batteryoperated-backend.herokuapp.com/projects', {
       method: "POST",
       headers: {
         "Content-Type":"application/json",
@@ -40,16 +41,18 @@ projsubmit = (event)=> {
         user_id: this.props.user.id
       })
     }).then(resp => resp.json())
-    .then(created => alert("PROJECT MADE"))
+    .then(created =>
+     alert("PROJECT MADE"),
+   )
 }
 
     render(){
         return(
-            <div>
+            <div className="padding">
                 <div className="form">
                 
                 <h1 className="input">Create Project</h1>
-                <Form onSubmit={this.projsubmit}>
+                <Form >
     <Form.Field >
       <label className="input">Name:   </label>
       <input placeholder='will be used for searches' onChange={this.name} value={this.state.name}/>
@@ -57,7 +60,7 @@ projsubmit = (event)=> {
     <br/>
     <Form.Field>
       <label className="input">Description:   </label>
-      <textarea placeholder='Desc' onChange={this.desc} value={this.state.desc}/>
+      <textarea placeholder='Desc' onChange={this.desc} value={this.state.desc} rows="5" cols="60"/>
     </Form.Field>
     <br/>
     <Form.Field>
@@ -65,9 +68,11 @@ projsubmit = (event)=> {
       <input placeholder='picture' onChange={this.image} value={this.state.image}/>
     </Form.Field> 
     <br/>
-    <Button className="center" type='submit'>Submit</Button>
+    
   </Form>
+  <Link className="links" to="/profile" onClick={this.projsubmit}>SUBMIT</Link>
   </div>
+  <h3>USE IMAGE URL FROM EXTISTING IMAGE ON WEB</h3>
   <img alt="Project pic" src={this.state.image}/>
   </div>
         )

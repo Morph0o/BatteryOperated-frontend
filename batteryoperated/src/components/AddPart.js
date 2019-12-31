@@ -38,7 +38,7 @@ class AddPart extends React.Component{
     }
     render(){
         return(
-            <div><Form onSubmit={this.partsubmit}>
+            <div className="padding"><Form onSubmit={this.partsubmit}>
                 <Form.Field>
                 <select onChange={this.partchange}>
                     <option value={null}>PICK A PART:</option>
@@ -47,6 +47,7 @@ class AddPart extends React.Component{
                 </Form.Field>
                 <Button type="submit">ADD PART</Button>
                 </Form>
+                <h3>If you don't see a part Create it from your profile with the ADD PART Button</h3>
             </div>
         )
     }
