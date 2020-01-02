@@ -41,7 +41,7 @@ projsubmit = (event)=> {
         user_id: this.props.user.id
       })
     }).then(resp => resp.json())
-    .then(created =>
+    .then(created => 
      alert("PROJECT MADE"),
    )
 }

@@ -12,7 +12,7 @@ class CreateParts extends React.Component{
     }
     partsubmit=(event)=> {
         event.preventDefault()
-        fetch('http://localhost:3000/parts', {
+        fetch('https://batteryoperated-backend.herokuapp.com/parts', {
       method: "POST",
       headers: {
         "Content-Type":"application/json",

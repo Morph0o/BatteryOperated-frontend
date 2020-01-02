@@ -11,14 +11,14 @@ class AddPart extends React.Component{
     }
     componentDidMount(){
        
-        fetch('http://localhost:3000/parts')
+        fetch('https://batteryoperated-backend.herokuapp.com/parts')
         .then(resp => resp.json())
         .then(parts => this.setState({
             parts: parts
         }))
     }
     partsubmit=()=> {
-        fetch('http://localhost:3000/project_parts', {
+        fetch('https://batteryoperated-backend.herokuapp.com/project_parts', {
             method: "POST",
             headers: {
               "Content-Type":"application/json",

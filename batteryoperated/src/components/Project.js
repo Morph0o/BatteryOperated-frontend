@@ -12,7 +12,7 @@ class Project extends React.Component{
     }
     componentDidMount() {
        let id = this.props.match.params.id
-        fetch(`http://localhost:3000/projects/${id}`)
+        fetch(`https://batteryoperated-backend.herokuapp.com/projects/${id}`)
         .then(resp => resp.json())
         .then(project => {
             console.log(project.id)
@@ -23,7 +23,7 @@ class Project extends React.Component{
     }
     destroy = () => {
         let id = this.props.match.params.id
-        fetch(`http://localhost:3000/projects/${id}`,
+        fetch(`https://batteryoperated-backend.herokuapp.com/projects/${id}`,
         {method: 'delete'})
         .then(resp => resp.json())
         .then(project => {

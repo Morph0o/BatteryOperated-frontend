@@ -71,6 +71,7 @@ let proj = this.state.projects.filter(project => project.id != id)
     })
   }
   
+  
   render(){
   return (
     <div >

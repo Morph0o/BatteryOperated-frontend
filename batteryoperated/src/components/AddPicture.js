@@ -14,7 +14,7 @@ class AddPicture extends React.Component{
         })
     }
     picturesubmit =()=>{
-        fetch('http://localhost:3000/images', {
+        fetch('https://batteryoperated-backend.herokuapp.com/images', {
             method: "POST",
             headers: {
               "Content-Type":"application/json",

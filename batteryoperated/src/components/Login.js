@@ -21,7 +21,7 @@ class Login extends React.Component{
         })
     }
     loginsubmit = () => {
-        fetch('http://localhost:3000/login', {
+        fetch('https://batteryoperated-backend.herokuapp.com/login', {
       method: "POST",
       headers: {
         "Content-Type":"application/json",

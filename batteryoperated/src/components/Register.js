@@ -34,7 +34,7 @@ profilepic = (event) => {
 registersubmit=(e)=>{
     console.log('we hit the submit callback')
     e.preventDefault()
-    fetch('http://localhost:3000/users', {
+    fetch('https://batteryoperated-backend.herokuapp.com/users', {
         method: "POST",
         headers: {
           "Content-Type":"application/json",
@@ -47,7 +47,7 @@ registersubmit=(e)=>{
           profilepic: this.state.profilepic
         })
 }).then(resp => resp.json())
-.then( created => console.log(created))
+.then( created => alert("REGISTERED!!!!"))
 
 }
     render(){
