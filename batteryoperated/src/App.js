@@ -64,7 +64,7 @@ class App extends React.Component{
     return this.state.project
   }
   refreshDelete = (id) => {
-let proj = this.state.projects.filter(project => project.id != id)
+let proj = this.state.projects.filter(project => project.id !== id)
     console.log(proj)
     this.setState({
       projects: proj
